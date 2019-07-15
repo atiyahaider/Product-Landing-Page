@@ -1,0 +1,374 @@
+:root {
+  --color-lightgray: rgb(231, 231, 231);
+  --color-cyan: #43d7b5;
+  --color-darkgray: #595959;
+  --color-medgray: #c0c0c0;
+  --color-gray: #808080;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: url("https://res.cloudinary.com/dzsnl7ocm/image/upload/v1538414819/what-the-hex.png");
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-gray);
+  align-items: center;
+}
+@media screen and (max-width: 570px) {
+  #header {
+    height: auto;
+  }
+}
+@media screen and (max-width: 200px) {
+  #header {
+    flex-direction: column;
+  }
+}
+
+.spacer {
+  width: 5vw;
+  height: 100%;
+}
+@media screen and (max-width: 570px) {
+  .spacer {
+    display: none;
+  }
+}
+
+.logo {
+  margin-right: auto;
+  height: 100%;
+}
+@media screen and (max-width: 570px) {
+  .logo {
+    height: 50px;
+  }
+}
+
+#header-img {
+  height: 100%;
+  width: auto;
+  padding: 5px 0;
+}
+
+#nav-bar ul {
+  width: 50vw;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+@media screen and (max-width: 570px) {
+  #nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-cyan);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  transition: color 400ms ease-out;
+}
+@media screen and (max-width: 570px) {
+  .nav-link {
+    font-size: 0.9em;
+  }
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: var(--color-cyan);
+  position: relative;
+  bottom: -10px;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+@media screen and (min-width: 570px) {
+  nav a:hover::after {
+    width: 100%;
+  }
+}
+
+#container {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  width: 100%;
+  overflow: scroll;
+}
+@media screen and (max-width: 570px) {
+  #container {
+    top: 67px;
+  }
+}
+
+.heading {
+  width: 85vw;
+  border: 5px groove var(--color-cyan);
+  margin: auto;
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: var(--color-darkgray);
+}
+
+#pictures div {
+  width: 190px;
+}
+
+#pictures img {
+  width: 100%;
+}
+
+.images {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  /* @media screen and (max-width: 570px) {
+     flex-direction: column;
+   }*/
+}
+
+#features {
+  margin-top: 40px;
+  margin-bottom: 55px;
+}
+
+#feature-list {
+  width: 70vw;
+  font-weight: bold;
+  list-style: none;
+  margin: auto;
+  text-align: left;
+  color: var(--color-gray);
+  display: grid;
+  grid-row-gap: 15px;
+}
+
+#feature-list li {
+  position: relative;
+  padding-left: 20px;
+  text-align: justify;
+}
+
+#feature-list li:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url("https://res.cloudinary.com/dzsnl7ocm/image/upload/v1538423914/LightningBolt.png");
+  background-size: cover;
+  background-position: cen;
+  left: -10px;
+  top: 0;
+}
+
+#radiation {
+  width: 600px;
+  margin: auto;
+  padding: 10px;
+  border: 5px groove var(--color-darkgray);
+  color: var(--color-darkgray);
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 600px) {
+  #radiation {
+    width: auto;
+    border: 0;
+  }
+}
+
+#radiation-text {
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+#video {
+  width: 560px;
+}
+@media screen and (max-width: 560px) {
+  #video {
+    width: auto;
+  }
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  align-items: flex-start;
+  border: 4px groove var(--color-cyan);
+  margin-right: 10px;
+}
+@media screen and (max-width: 570px) {
+  .price-box {
+    width: auto;
+    margin-right: 0;
+    border: 1px solid var(--color-cyan);
+  }
+}
+
+.itemprice-box:last-child {
+  margin-right: 0;
+}
+
+.price-img {
+  width: 100%;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.select-price {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 570px) {
+  .select-price {
+    top: 50%;
+  }
+}
+
+.price-box:hover .price-img {
+  opacity: 0.5;
+}
+
+.price-box:hover .select-price {
+  opacity: 1;
+}
+
+#price-amt {
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--color-darkgray);
+}
+@media screen and (max-width: 570px) {
+  #price-amt {
+    font-size: 0.75em;
+    font-weight: normal;
+  }
+}
+
+#email-section {
+  width: 50vw;
+  margin: 40px auto;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  font-size: 20px;
+  border-radius: 2px;
+}
+@media screen and (max-width: 770px) {
+  #email-section {
+    width: 80vw;
+  }
+}
+
+#email-info {
+  background-color: var(--color-darkgray);
+  color: white;
+  padding: 10px;
+}
+
+#email-form {
+  background-color: var(--color-lightgray);
+  color: var(--color-cyan);
+  padding: 10px;
+}
+
+#email-input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+#email-label {
+  padding-right: 5px;
+}
+
+#email {
+  height: 30px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid var(--color-medgray);
+  border-radius: 2px;
+}
+@media screen and (max-width: 770px) {
+  #email {
+    width: auto;
+  }
+}
+
+.btn {
+  background-color: var(--color-cyan);
+  color: var(--color-gray);
+  height: 28px;
+  width: 85px;
+  border: 1px solid var(--color-gray);
+  border-radius: 3px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: var(--color-cyan);
+}
+
+footer {
+  margin-top: 20px;
+  background-color: var(--color-gray);
+  padding: 10px;
+}
+footer ul {
+  display: flex;
+  justify-content: flex-end;
+}
+footer ul li {
+  list-style: none;
+  padding: 0 10px;
+}
+footer a {
+  text-decoration: none;
+  color: var(--color-cyan);
+}
+footer a:hover {
+  color: white;
+}
